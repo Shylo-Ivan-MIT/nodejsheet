@@ -1,0 +1,60 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+
+*{
+    font-family: verdana;
+}
+h1{
+    color: darkolivegreen; 
+}
+p {
+    font-size:20px; 
+    text-align:center;
+}
+.line {
+	position:relative;
+        text-align: center; 
+	top: 10px;
+	font-size: 25px;
+	font-weight: bold;
+	color: darkolivegreen;
+}
+.line:before,
+.line:after {
+	content: '';
+	width: 500px;
+	height: 3px;
+	background-color: darkolivegreen;
+	position: absolute;
+	top: 20px;
+	left: 0px;
+}
+.line:after {
+	left: 830px;}
+
+.photo {
+    display: flex;
+    justify-content: center;
+    float: right;
+    width: auto;
+}
+img {
+  width: 70%;
+  height: auto;
+}
+
+.card{
+  display: flex;
+}
+.card-block:first,
+.card-block:second
+{
+  width: 500px;
+  height: 200px;
+}
+.card-block:second{
+    text-align: right;
+}
