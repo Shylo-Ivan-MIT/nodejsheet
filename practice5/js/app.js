@@ -16,11 +16,11 @@ name.onclick = function(){
     }
     else{
         if(num >= 12)num = 1; else num++;
-        $ajaxUtils.sendGetRequest("https://reqres.in/api/users/"+num,function(response){
+        $ajaxUtils.sendGetRequest("https://web-development-task8.herokuapp.com/"+num,function(response){
             const json =  JSON.parse(response.responseText);
-            name.innerText = json.data.first_name +" "+ json.data.last_name;
-            mail.innerText = json.data.email;
-            picture.src = json.data.avatar; 
+            name.innerText = json.first_name +" "+ json.last_name;
+            mail.innerText = json.email;
+            picture.src = json.avatar; 
         });
     }
 };
