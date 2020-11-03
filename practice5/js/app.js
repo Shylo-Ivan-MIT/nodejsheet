@@ -1,26 +1,26 @@
-const Firstname = document.getElementById("firstnam");
-const Imag = document.getElementById("image");
-const Email = document.getElementById("em");
+const name = document.getElementById("firstnam");
+const picture = document.getElementById("image");
+const mail = document.getElementById("em");
 let num = 1;
 let numb = 0;
 let start = {
-    Firstname: Firstname.innerText,
-    Imag: Imag.src,
-    Email: Email.innerText
+    Firstname: name.innerText,
+    Imag: picture.src,
+    Email: mail.innerText
 };
 name.onclick = function(){
     if(numb++%5 === 0){
-        Firstname.innerText = start.Firstname;
-        Imag.src = start.Imag;
-        Email.innerText = start.Email;
+        name.innerText = start.Firstname;
+        picture.src = start.Imag;
+        mail.innerText = start.Email;
     }
     else{
         if(num >= 12)num = 1; else num++;
-        $ajaxUtils.sendGetRequest("https://web-development-task8.herokuapp.com/users/"+num,function(response){
+        $ajaxUtils.sendGetRequest("https://web-development-task8.herokuapp.com/users"+num,function(response){
             const json =  JSON.parse(response.responseText);
-            Firsrname.innerText = json.first_name +" "+ json.last_name;
-            Email.innerText = json.email;
-            Imag.src = json.avatar; 
+            name.innerText = json.first_name +" "+ json.last_name;
+            mail.innerText = json.email;
+            picture.src = json.avatar; 
         });
     }
 };
