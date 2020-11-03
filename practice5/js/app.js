@@ -17,7 +17,7 @@ name.onclick = function(){
     else{
         if(num >= 12)num = 1; else num++;
         $ajaxUtils.sendGetRequest("https://web-development-task8.herokuapp.com/users"+num,function(response){
-            const json =  JSON.parse(response.responseText);
+            const json =  (JSON.parse(response.responseText))[0];
             name.innerText = json.first_name +" "+ json.last_name;
             mail.innerText = json.email;
             picture.src = json.avatar; 
